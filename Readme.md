@@ -14,12 +14,12 @@ Simply install the plugin:
 
 `npm`:
 ```bash
-$ npm install -D snowpack-plugin-vue2
+$ npm install -D @morgul/snowpack-plugin-vue2
 ```
 
 `yarn`:
 ```bash
-$ yarn add -D snowpack-plugin-vue2
+$ yarn add -D @morgul/snowpack-plugin-vue2
 ```
 
 Then, add it to your `snowpack.config.js`:
@@ -28,7 +28,7 @@ Then, add it to your `snowpack.config.js`:
 // snowpack.config.json
 {
   "plugins": [
-    "snowpack-plugin-vue2"
+    "@morgul/snowpack-plugin-vue2"
   ]
 }
 ```
