@@ -53,7 +53,7 @@ These are the guidelines for working on this project.
 
 ### Project layout
 
-The bulk of this project's code lives in `/compiler`. The `/plugin` is a verbatim copy of [@snowpack/plugin-vue][plugin-vue], with as few changes as possible. (Even the original `package.json` is kept around.)
+The bulk of this project's code lives in `/compiler`. The `/plugin` is a verbatim copy of [@snowpack/plugin-vue][plugin-vue], with as few changes as possible. (Even the original `package.json` is kept around.) There is also a sample project contained in `/example`, to act as both a test for the plugin, and a usage guide.
 
 [snowpack]: https://www.snowpack.dev/
 [plugin-vue]: https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-vue
