@@ -1,0 +1,35 @@
+{
+  "name": "snowpack-plugin-vue2",
+  "version": "0.1.0",
+  "description": "A snowpack vue2 compiler based on `@snowpack/plugin-vue`.",
+  "main": "plugin/plugin.js",
+  "scripts": {
+    "test": "jest /plugin/test/ --test-timeout=30000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Morgul/snowpack-plugin-vue2.git"
+  },
+  "keywords": [
+    "snowpack",
+    "vue",
+    "vue2",
+    "sfc",
+    "plugin"
+  ],
+  "author": "Christopher S. Case <chris.case@g33xnexus.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Morgul/snowpack-plugin-vue2/issues"
+  },
+  "homepage": "https://github.com/Morgul/snowpack-plugin-vue2#readme",
+  "dependencies": {
+    "@vue/component-compiler-utils": "^3.2.0",
+    "esbuild": "^0.8.46",
+    "sass": "^1.32.7",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
