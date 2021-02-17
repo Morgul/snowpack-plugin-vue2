@@ -4,16 +4,16 @@
 
 import Vue from 'vue';
 
+// Main app SFC
+import App from './app.vue';
+
 //----------------------------------------------------------------------------------------------------------------------
 
 new Vue({
     el: '#app',
-    data: {
-        message: 'Hello, world!'
-    },
     render(h)
     {
-        return h('div', this.message);
+        return h(App);
     }
 })
 
