@@ -4,7 +4,13 @@
 
 <template>
     <div id="main-app">
-      Message: {{ msg }}
+        <h1>Example App</h1>
+        <p>
+            This is just a little demo component that hits all the edge cases.
+        </p>
+        <p>
+            Message: {{ msg }}
+        </p>
     </div>
 </template>
 
