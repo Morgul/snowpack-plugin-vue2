@@ -45,7 +45,8 @@ function $compileTemplate(options)
     // This is done manually in @vue/compiler-sfc, but controlled by a boolean in `@vue/component-compiler-utils`. So,
     // we ignore all the hard work the plugin did, and just toggle a boolean so the compiler will redo the work. Eh, as
     // far as hacks go, this isn't the worst.
-    if(options?.compilerOptions?.scopeId)
+    const scopeId = options?.compilerOptions?.scopeId;
+    if(scopeId)
     {
         options.scoped = true;
     } // end if
@@ -56,6 +57,10 @@ function $compileTemplate(options)
     //------------------------------------------------------------------------------------------------------------------
 
     const results = compileTemplate({ ...options, compiler });
+
+    if(scopeId) {
+        results.code += `\ndefaultExport._scopeId = "${scopeId}";`;
+    }
 
     // TODO: Make sure the results are actually compatible. They look really close, but it's hard to say
     return { ...results };
