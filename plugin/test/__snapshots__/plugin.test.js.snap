@@ -39,7 +39,7 @@ to {
   },
   ".js": Object {
     "code": "
-const defaultExport = {
+var scriptExports = {
   data() {
     return {
       message: \\"Learn Vue\\"
@@ -47,38 +47,53 @@ const defaultExport = {
   }
 };
 
-import { createVNode as _createVNode, createTextVNode as _createTextVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createBlock as _createBlock } from \\"vue\\"
-
-const _hoisted_1 = { class: \\"App\\" }
-const _hoisted_2 = { class: \\"App-header\\" }
-const _hoisted_3 = /*#__PURE__*/_createVNode(\\"img\\", {
-  src: \\"/logo.svg\\",
-  class: \\"App-logo\\",
-  alt: \\"logo\\"
-}, null, -1 /* HOISTED */)
-const _hoisted_4 = /*#__PURE__*/_createVNode(\\"p\\", null, [
-  /*#__PURE__*/_createTextVNode(\\" Edit \\"),
-  /*#__PURE__*/_createVNode(\\"code\\", null, \\"src/App.vue\\"),
-  /*#__PURE__*/_createTextVNode(\\" and save to reload. \\")
-], -1 /* HOISTED */)
-const _hoisted_5 = {
-  class: \\"App-link\\",
-  href: \\"https://vuejs.org\\",
-  target: \\"_blank\\",
-  rel: \\"noopener noreferrer\\"
-}
-
-export function render(_ctx, _cache) {
-  return (_openBlock(), _createBlock(\\"div\\", _hoisted_1, [
-    _createVNode(\\"header\\", _hoisted_2, [
-      _hoisted_3,
-      _hoisted_4,
-      _createVNode(\\"a\\", _hoisted_5, _toDisplayString(_ctx.message), 1 /* TEXT */)
+var options = typeof scriptExports === 'function' ? scriptExports.options : scriptExports;
+const defaultExport = options;
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(\\"div\\", { staticClass: \\"App\\" }, [
+    _c(\\"header\\", { staticClass: \\"App-header\\" }, [
+      _c(\\"img\\", {
+        staticClass: \\"App-logo\\",
+        attrs: { src: \\"/logo.svg\\", alt: \\"logo\\" }
+      }),
+      _vm._v(\\" \\"),
+      _vm._m(0),
+      _vm._v(\\" \\"),
+      _c(
+        \\"a\\",
+        {
+          staticClass: \\"App-link\\",
+          attrs: {
+            href: \\"https://vuejs.org\\",
+            target: \\"_blank\\",
+            rel: \\"noopener noreferrer\\"
+          }
+        },
+        [_vm._v(_vm._s(_vm.message))]
+      )
     ])
-  ]))
+  ])
 }
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(\\"p\\", [
+      _vm._v(\\"\\\\n      Edit\\\\n      \\"),
+      _c(\\"code\\", [_vm._v(\\"src/App.vue\\")]),
+      _vm._v(\\" and save to reload.\\\\n    \\")
+    ])
+  }
+]
+render._withStripped = true
+
 
 defaultExport.render = render
+defaultExport.staticRenderFns = staticRenderFns
 export default defaultExport",
     "map": "",
   },
@@ -89,13 +104,18 @@ exports[`plugin base only tpl 1`] = `
 Object {
   ".js": Object {
     "code": "const defaultExport = {};
-import { createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \\"vue\\"
-
-export function render(_ctx, _cache) {
-  return (_openBlock(), _createBlock(\\"h1\\", null, \\"Vue Content Only Tpl\\"))
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(\\"h1\\", [_vm._v(\\"Vue Content Only Tpl\\")])
 }
+var staticRenderFns = []
+render._withStripped = true
+
 
 defaultExport.render = render
+defaultExport.staticRenderFns = staticRenderFns
 export default defaultExport",
     "map": "",
   },
@@ -141,7 +161,7 @@ to {
   },
   ".js": Object {
     "code": "
-const defaultExport = {
+var scriptExports = {
   data() {
     return {
       message: \\"Learn Vue\\"
@@ -149,38 +169,55 @@ const defaultExport = {
   }
 };
 
-import { createVNode as _createVNode, createTextVNode as _createTextVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createBlock as _createBlock } from \\"vue\\"
-
-const _hoisted_1 = { class: \\"App\\" }
-const _hoisted_2 = { class: \\"App-header\\" }
-const _hoisted_3 = /*#__PURE__*/_createVNode(\\"img\\", {
-  src: \\"/logo.svg\\",
-  class: \\"App-logo\\",
-  alt: \\"logo\\"
-}, null, -1 /* HOISTED */)
-const _hoisted_4 = /*#__PURE__*/_createVNode(\\"p\\", null, [
-  /*#__PURE__*/_createTextVNode(\\" Edit \\"),
-  /*#__PURE__*/_createVNode(\\"code\\", null, \\"src/App.vue\\"),
-  /*#__PURE__*/_createTextVNode(\\" and save to reload. \\")
-], -1 /* HOISTED */)
-const _hoisted_5 = {
-  class: \\"App-link\\",
-  href: \\"https://vuejs.org\\",
-  target: \\"_blank\\",
-  rel: \\"noopener noreferrer\\"
-}
-
-export function render(_ctx, _cache) {
-  return (_openBlock(), _createBlock(\\"div\\", _hoisted_1, [
-    _createVNode(\\"header\\", _hoisted_2, [
-      _hoisted_3,
-      _hoisted_4,
-      _createVNode(\\"a\\", _hoisted_5, _toDisplayString(_ctx.message), 1 /* TEXT */)
+var options = typeof scriptExports === 'function' ? scriptExports.options : scriptExports;
+var scriptExports = options;
+var options = typeof scriptExports === 'function' ? scriptExports.options : scriptExports;
+const defaultExport = options;
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(\\"div\\", { staticClass: \\"App\\" }, [
+    _c(\\"header\\", { staticClass: \\"App-header\\" }, [
+      _c(\\"img\\", {
+        staticClass: \\"App-logo\\",
+        attrs: { src: \\"/logo.svg\\", alt: \\"logo\\" }
+      }),
+      _vm._v(\\" \\"),
+      _vm._m(0),
+      _vm._v(\\" \\"),
+      _c(
+        \\"a\\",
+        {
+          staticClass: \\"App-link\\",
+          attrs: {
+            href: \\"https://vuejs.org\\",
+            target: \\"_blank\\",
+            rel: \\"noopener noreferrer\\"
+          }
+        },
+        [_vm._v(_vm._s(_vm.message))]
+      )
     ])
-  ]))
+  ])
 }
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(\\"p\\", [
+      _vm._v(\\"\\\\n      Edit\\\\n      \\"),
+      _c(\\"code\\", [_vm._v(\\"src/App.vue\\")]),
+      _vm._v(\\" and save to reload.\\\\n    \\")
+    ])
+  }
+]
+render._withStripped = true
+
 
 defaultExport.render = render
+defaultExport.staticRenderFns = staticRenderFns
 export default defaultExport",
     "map": "",
   },

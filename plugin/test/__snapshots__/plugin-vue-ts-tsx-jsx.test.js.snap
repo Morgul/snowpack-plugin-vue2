@@ -14,12 +14,14 @@ export function jsx(tag, props = null, children = null) {
 }
 
 import {defineComponent} from \\"vue\\";
-export default defineComponent({
+var scriptExports = defineComponent({
   name: \\"VueContentJsx\\",
   setup() {
     return () => /* @__PURE__ */ jsx(Fragment, null, /* @__PURE__ */ jsx(\\"h1\\", null, \\"VueContentJsx\\"));
   }
-});",
+});
+var options = typeof scriptExports === \\"function\\" ? scriptExports.options : scriptExports;
+export default options;",
     "map": "",
   },
 }
@@ -29,19 +31,26 @@ exports[`plugin vue with ts 1`] = `
 Object {
   ".js": Object {
     "code": "import {defineComponent} from \\"vue\\";
-const defaultExport = defineComponent({
+var scriptExports = defineComponent({
   name: \\"VueContentTs\\",
   setup() {
     const name = \\"VueContentTs\\";
   }
 });
-import { createVNode as _createVNode, openBlock as _openBlock, createBlock as _createBlock } from \\"vue\\"
-
-export function render(_ctx, _cache) {
-  return (_openBlock(), _createBlock(\\"h1\\", null, \\"Vue Content Ts\\"))
+var options = typeof scriptExports === \\"function\\" ? scriptExports.options : scriptExports;
+const defaultExport = options;
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(\\"h1\\", [_vm._v(\\"Vue Content Ts\\")])
 }
+var staticRenderFns = []
+render._withStripped = true
+
 
 defaultExport.render = render
+defaultExport.staticRenderFns = staticRenderFns
 export default defaultExport",
     "map": "",
   },
@@ -62,13 +71,15 @@ export function jsx(tag, props = null, children = null) {
 }
 
 import {defineComponent} from \\"vue\\";
-export default defineComponent({
+var scriptExports = defineComponent({
   name: \\"VueContentTsx\\",
   setup() {
     const name = \\"VueContentTsx\\";
     return () => /* @__PURE__ */ jsx(Fragment, null, /* @__PURE__ */ jsx(\\"h1\\", null, \\"VueContentTsx\\"));
   }
-});",
+});
+var options = typeof scriptExports === \\"function\\" ? scriptExports.options : scriptExports;
+export default options;",
     "map": "",
   },
 }
