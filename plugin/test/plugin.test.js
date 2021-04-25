@@ -55,4 +55,5 @@ test('plugin base style scoped', async () => {
     filePath: codeFilePath,
   });
   expect(resultContent['.css'].code).toMatch(/h1\[data-v-.*\]/);
+  expect(resultContent['.js'].code).toMatch(/"data-v-.*"/);
 });

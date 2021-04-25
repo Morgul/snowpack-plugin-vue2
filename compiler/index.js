@@ -22,14 +22,16 @@ function $parse(source, parseOptions)
         needMap: sourceMap
     });
 
-    // Remove the obnoxious comment newlines in the generated code
-    descriptor.script.content = descriptor.script.content.replace(/\/\/\n/g, '');
+    if(descriptor.script) {
+        // Remove the obnoxious comment newlines in the generated code
+        descriptor.script.content = descriptor.script.content.replace(/\/\/\n/g, '');
 
-    // Support using `Vue.extends()`. Code adapted from:
-    // https://github.com/vuejs/vue-loader/blob/master/lib/runtime/componentNormalizer.js#L17-L20
-    descriptor.script.content = descriptor.script.content.replace('export default ', 'var scriptExports = ');
-    descriptor.script.content += ';\nvar options = typeof scriptExports === \'function\' ? scriptExports.options : scriptExports;\n';
-    descriptor.script.content += 'export default options;'
+        // Support using `Vue.extends()`. Code adapted from:
+        // https://github.com/vuejs/vue-loader/blob/master/lib/runtime/componentNormalizer.js#L17-L20
+        descriptor.script.content = descriptor.script.content.replace('export default ', 'var scriptExports = ');
+        descriptor.script.content += '\nvar options = typeof scriptExports === \'function\' ? scriptExports.options : scriptExports;';
+        descriptor.script.content += '\nexport default options;'
+    }
 
     return {
         descriptor,
@@ -45,7 +47,8 @@ function $compileTemplate(options)
     // This is done manually in @vue/compiler-sfc, but controlled by a boolean in `@vue/component-compiler-utils`. So,
     // we ignore all the hard work the plugin did, and just toggle a boolean so the compiler will redo the work. Eh, as
     // far as hacks go, this isn't the worst.
-    if(options?.compilerOptions?.scopeId)
+    const scopeId = options?.compilerOptions?.scopeId;
+    if(scopeId)
     {
         options.scoped = true;
     } // end if
@@ -56,6 +59,10 @@ function $compileTemplate(options)
     //------------------------------------------------------------------------------------------------------------------
 
     const results = compileTemplate({ ...options, compiler });
+
+    if(scopeId) {
+        results.code += `\ndefaultExport._scopeId = "${scopeId}";`;
+    }
 
     // TODO: Make sure the results are actually compatible. They look really close, but it's hard to say
     return { ...results };
