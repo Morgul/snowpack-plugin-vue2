@@ -41,6 +41,8 @@ This plugin is definitely me scratching my own itch. And I haven't even decided 
 
 Digging through the source code to [vue-loader][], I came upon [@vue/component-compiler-utils][compiler-utils], which appears to have been created after [@vue/compiler-sfc][compiler-sfc], with the same API, as a way of centralizing the code for doing all of this. I agree that something like [@vue/compiler-sfc][compiler-sfc] is required, but that's Vue 3 only, so I'm glad they backported that design to Vue2. It makes my life significantly easier.
 
+_Note: As more development has happened, it's become clear that [@vue/component-compiler-utils][compiler-utils] doesn't do everything that [@vue/compiler-sfc][compiler-sfc], instead relying on [vue-loader][] to do some of it. That's fine, we can slowly intriduce [vue-loader][] code as needed to handle these edge cases._
+
 ### Project Guidelines
 
 These are the guidelines for working on this project.
