@@ -47,7 +47,7 @@ function $compileTemplate(options)
     // This is done manually in @vue/compiler-sfc, but controlled by a boolean in `@vue/component-compiler-utils`. So,
     // we ignore all the hard work the plugin did, and just toggle a boolean so the compiler will redo the work. Eh, as
     // far as hacks go, this isn't the worst.
-    const scopeId = options?.compilerOptions?.scopeId;
+    const scopeId = options && options.compilerOptions && options.compilerOptions.scopeId;
     if(scopeId)
     {
         options.scoped = true;
