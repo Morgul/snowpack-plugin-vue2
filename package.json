@@ -1,6 +1,6 @@
 {
   "name": "@morgul/snowpack-plugin-vue2",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A snowpack vue2 compiler based on `@snowpack/plugin-vue`.",
   "main": "plugin/plugin.js",
   "scripts": {
