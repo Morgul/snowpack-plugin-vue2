@@ -17,7 +17,7 @@ function $parse(source, parseOptions)
         source,
         filename,
         compiler,
-        compilerParseOptions: { pad: pad ?? 'line' },
+        compilerParseOptions: { pad: (pad === 'space' ? 'space' : 'line') },
         sourceRoot,
         needMap: sourceMap
     });
